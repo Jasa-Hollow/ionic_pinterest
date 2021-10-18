@@ -1,0 +1,80 @@
+<ion-header translucent>
+  <ion-toolbar>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="7">
+          <!-- .....................  Botón de Actualizaciones  ...................... -->
+          <!-- Se define el "estado" del evento como verdadero, ya que al dar click, 
+              cambia lo que se muestra al usuario, en este caso, las actualizaciones. -->
+          <ion-button (click)="onClick(true)" expand="block" shape="round" 
+              [color]="state ? 'dark': 'light'" class="nav-msg">
+            <ion-label>Actualizaciones</ion-label>
+          </ion-button>
+          <!-- ....................................................................... -->
+        </ion-col>
+        <ion-col size="5">
+          <!-- .....................  Botón de Mensajes  ...................... -->
+          <!-- Se define el "estado" del evento como falso, porque al cargar esta 
+              sección en Pinterest esta aparece primero los mensajes. -->
+          <ion-button (click)="onClick(false)" expand="block" shape="round" 
+              [color]="state ? 'light': 'dark'" class="nav-msg">
+            <ion-label>Mensajes</ion-label>
+          </ion-button>
+          <!-- ................................................................ -->
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+  <!-- .....................  Actualizaciones  ...................... -->
+  <ion-list *ngIf="state">
+    <ion-card *ngFor="let n of new">
+      <ion-label>
+        <p><strong class="news-title">{{ n.title }}</strong> {{ n.date }} </p>
+      </ion-label>
+      <img [src] = "n.img" class="news-img">
+    </ion-card>
+  </ion-list>
+  <!-- ....................................................... -->
+  
+  <!-- .....................  Mensajes  ...................... -->
+  <ion-list *ngIf="!state">
+    <ion-item *ngFor="let ms of message" class="item-msg" (click)="openModal(ms.img, ms.user, ms.msg, ms.date)">
+      <ion-avatar slot="start">
+        <img [src]=ms.img>
+      </ion-avatar>
+      <ion-label>
+        <h3> {{ ms.user }} </h3>
+        <p> {{ ms.msg }} </p>
+      </ion-label>
+      <ion-label slot="end">
+        <p> {{ ms.date }} </p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+  <!-- ....................................................... -->
+
+  <!-- .....................  Menú de Pinterest  ...................... -->
+  <ion-fab vertical="bottom" slot="fixed">
+    <ion-chip color="" mode="ios" outline="true">
+      <ion-buttons>
+        <ion-button href="inicio">
+          <ion-icon name="home" class="nav-ico"></ion-icon>
+        </ion-button>
+        <ion-button href="search">
+          <ion-icon name="search" class="nav-ico"></ion-icon>
+        </ion-button>
+        <ion-button href="mensajes">
+          <ion-icon name="chatbubble-ellipses-outline" class="nav-ico"></ion-icon>
+        </ion-button>
+        <ion-button href="perfil">
+          <img src="assets/pfp/mythra.png" id="user-pfp">
+        </ion-button>
+      </ion-buttons>
+    </ion-chip>
+  </ion-fab>
+  <!-- ................................................................ -->
+</ion-content>
