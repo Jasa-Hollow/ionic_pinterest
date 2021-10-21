@@ -1,4 +1,6 @@
 <ion-header>
+  <!-- ......................................................................... -->
+  <!-- Barra superior, con el nombre de usuario, así como el botón para salir del chat -->
   <ion-toolbar>
     <ion-label>
       <h3 class="title-user">{{ user }}</h3>
@@ -8,8 +10,11 @@
       <ion-icon name="arrow-back-outline" slot="icon-only"></ion-icon>
     </ion-button>
   </ion-toolbar>
+  <!-- ......................................................................... -->
 </ion-header>
 
+<!-- ......................................................................... -->
+<!-- Sección de mensajes -->
 <ion-content>
   <ion-grid>
     <ion-row>
@@ -37,7 +42,10 @@
     </ion-row>
   </ion-grid>
 </ion-content>
+<!-- ......................................................................... -->
 
+<!-- ......................................................................... -->
+<!-- Textarea para escribir el mensaje, y su botón de envío con un evento onClick -->
 <ion-footer>
   <ion-toolbar color="light">
     <ion-row>
@@ -55,3 +63,4 @@
     </ion-row>
   </ion-toolbar>
 </ion-footer>
+<!-- ......................................................................... -->

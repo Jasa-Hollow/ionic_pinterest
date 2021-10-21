@@ -27,12 +27,15 @@ export class MyModalPage{
   }
 
   messages = [
+    /*
+    Se deja vacío el array, para que se simule una conversación en cada chat.
     {
       c_img: 'assets/pfp/mythra.png',
       c_user: 'Jasa',
       c_msg: 'Hello!!',
       c_date: '6 meses'
     }
+    */
   ]
 
   currentUser = 'Jasa';

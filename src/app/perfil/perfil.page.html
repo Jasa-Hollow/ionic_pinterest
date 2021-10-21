@@ -1,11 +1,44 @@
 <ion-header>
+  <!-- ......................................................................... -->
+  <!-- Barra superior, con el nombre de usuario, y opciones del perfil -->
   <ion-toolbar>
-    <ion-title>perfil</ion-title>
+    <ion-label>
+      <h3 class="title-user"> Jasa Hollow </h3>
+    </ion-label>
+    <img src="assets/pfp/mythra.png" id="user-pfp" slot="start">
+    <ion-button size="small" slot="end" fill="clear" color="dark">
+      <ion-icon name="ellipsis-horizontal-outline" slot="icon-only"></ion-icon>
+    </ion-button>
   </ion-toolbar>
+  <!-- ......................................................................... -->
 </ion-header>
 
 <ion-content>
-  <!-- .....................  Menú de Pinterest  ...................... -->
+  <!-- ......................................................................... -->
+  <!-- Tableros del usuario -->
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size="6">
+        <ion-list>
+          <ion-card *ngFor="let t1 of tablero1">
+            <img [src] = "t1.img">
+            <ion-label>
+              <p class="title-tab"><strong>{{ t1.title }}</strong></p>
+              <p class="pin-number">
+                <strong>{{ t1.pin }}</strong> 
+                {{ t1.time }} 
+              </p>
+            </ion-label>
+          </ion-card>
+        </ion-list>
+      </ion-col>
+      <ion-col size="6">Mundo</ion-col>
+    </ion-row>
+  </ion-grid>
+  <!-- ......................................................................... -->
+
+  <!-- ................................................................ -->
+  <!-- Menú de Pinterest -->
   <ion-fab vertical="bottom" slot="fixed">
     <ion-chip color="" mode="ios" outline="true">
       <ion-buttons>
