@@ -1,11 +1,74 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>search</ion-title>
-  </ion-toolbar>
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size="12">
+        <ion-searchbar [animated]="true" placeholder="Buscar"></ion-searchbar>
+      </ion-col>
+      <ion-col size="2" class="cam">
+        <ion-icon name="camera-outline" class="cam-ico"></ion-icon>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-header>
 
 <ion-content>
-  <!-- .....................  Menú de Pinterest  ...................... -->
+  <!-- ......................................................................... -->
+  <!-- Slider superior -->
+  <ion-text color="dark" class="ion-text-center">
+    <h5> Inspiración diaria </h5> 
+  </ion-text>
+
+  <ion-slides pager="true">
+    <ion-slide *ngFor="let sd of slide">
+      <div class="slide">
+        <img [src]="sd.img" class="img-slide">
+        <p class="img-text"> {{ sd.text }} </p>
+      </div>
+    </ion-slide>
+  </ion-slides>
+  <!-- ......................................................................... -->
+
+  <!-- ......................................................................... -->
+  <!-- Ideas de los creadores -->
+  <ion-text color="dark" class="ion-text-center">
+    <h5> Ideas de los creadores </h5>
+  </ion-text>
+
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size="4">
+        <div class="ideas">
+          <ion-badge color="light" mode="ios">
+            <ion-icon name="images-outline"></ion-icon> 
+            4 
+          </ion-badge>
+          <img src="assets/ideas/i4.png" class="ideas-img">
+        </div>
+      </ion-col>
+      <ion-col size="4">
+        <div class="ideas">
+          <ion-badge color="light" mode="ios">
+            <ion-icon name="images-outline"></ion-icon> 
+            1 
+          </ion-badge>
+          <img src="assets/ideas/i5.png" class="ideas-img">
+        </div>
+      </ion-col>
+      <ion-col size="4">
+        <div class="ideas">
+          <ion-badge color="light" mode="ios">
+            <ion-icon name="images-outline"></ion-icon> 
+            9 
+          </ion-badge>
+          <img src="assets/ideas/i6.png" class="ideas-img">
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <!-- ......................................................................... -->
+  
+  <!-- ......................................................................... -->
+  <!-- Menú de Pinterest -->
   <ion-fab vertical="bottom" slot="fixed">
     <ion-chip color="" mode="ios" outline="true">
       <ion-buttons>
@@ -24,5 +87,5 @@
       </ion-buttons>
     </ion-chip>
   </ion-fab>
-  <!-- ................................................................ -->
+  <!-- ......................................................................... -->
 </ion-content>
