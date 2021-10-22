@@ -6,22 +6,36 @@
       <h3 class="title-user"> Jasa Hollow </h3>
     </ion-label>
     <img src="assets/pfp/mythra.png" id="user-pfp" slot="start">
-    <ion-button size="small" slot="end" fill="clear" color="dark">
+    <ion-button (click)="options()" size="small" slot="end" fill="clear" color="dark">
       <ion-icon name="ellipsis-horizontal-outline" slot="icon-only"></ion-icon>
     </ion-button>
   </ion-toolbar>
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size="10">
+        <!-- Ícono de búsqueda -->
+        <ion-searchbar [animated]="true" placeholder="Buscar"></ion-searchbar>
+      </ion-col>
+      <ion-col size="1" class="options">
+        <ion-icon (click)="options()" name="options-outline" class="ico-opt"></ion-icon>
+      </ion-col>
+      <ion-col size="1" class="options">
+        <ion-icon name="add-outline" class="ico-opt"></ion-icon>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
   <!-- ......................................................................... -->
 </ion-header>
 
-<ion-content>
+<ion-content [fullscreen]="true">
   <!-- ......................................................................... -->
   <!-- Tableros del usuario -->
-  <ion-grid fixed>
+  <ion-grid>
     <ion-row>
       <ion-col size="6">
         <ion-list>
           <ion-card *ngFor="let t1 of tablero1">
-            <img [src] = "t1.img">
+            <img [src] = "t1.img" class="tabl-min">
             <ion-label>
               <p class="title-tab"><strong>{{ t1.title }}</strong></p>
               <p class="pin-number">
@@ -32,7 +46,20 @@
           </ion-card>
         </ion-list>
       </ion-col>
-      <ion-col size="6">Mundo</ion-col>
+      <ion-col size="6">
+        <ion-list>
+          <ion-card *ngFor="let t2 of tablero2">
+            <img [src] = "t2.img" class="tabl-min">
+            <ion-label>
+              <p class="title-tab"><strong>{{ t2.title }}</strong></p>
+              <p class="pin-number">
+                <strong>{{ t2.pin }}</strong> 
+                {{ t2.time }} 
+              </p>
+            </ion-label>
+          </ion-card>
+        </ion-list>
+      </ion-col>
     </ion-row>
   </ion-grid>
   <!-- ......................................................................... -->

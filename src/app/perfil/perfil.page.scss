@@ -2,18 +2,27 @@ ion-toolbar{
     padding-left: 20px;
 }
 
+ion-searchbar{
+    opacity: 0.9;
+    border-radius: 30%;
+    margin-left: 0; margin-right: 0;
+    padding-left: 0; padding-right: 0;
+}
+
 ion-grid{
-    text-align: center;
-    margin: 0;
-    padding: 0;
+    width: 100%;
 }
 
 ion-list{
+    margin-top: 10px;
     text-align: left;
     background-color: black;
     color: #ffffff !important;
     ion-card{
         background-color: black;
+        margin: 0 !important;
+        margin-bottom: 10px !important;
+        padding: 0 !important;
     }
 }
 
@@ -21,6 +30,21 @@ ion-fab {
     margin-left: 30px !important;
     margin-left: 45px;
     padding-bottom: 10px;
+}
+
+.options {
+    padding-top: 20px;
+    padding-left: 0;
+    .ico-opt {
+        font-size: 25px;
+    }
+}
+
+.tabl-min {
+    height: 100px !important;
+    width: 100%;
+    margin-bottom: 5px;
+    border-radius: 5px;
 }
 
 .nav-ico {
