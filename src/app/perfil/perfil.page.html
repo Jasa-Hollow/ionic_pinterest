@@ -37,11 +37,11 @@
           <ion-card *ngFor="let t1 of tablero1">
             <img [src] = "t1.img" class="tabl-min">
             <ion-label>
-              <p class="title-tab"><strong>{{ t1.title }}</strong></p>
-              <p class="pin-number">
+              <ion-text color="dark" class="title-tab"><strong>{{ t1.title }}</strong></ion-text><br>
+              <ion-text color="dark" class="pin-number">
                 <strong>{{ t1.pin }}</strong> 
                 {{ t1.time }} 
-              </p>
+              </ion-text>
             </ion-label>
           </ion-card>
         </ion-list>
@@ -51,11 +51,11 @@
           <ion-card *ngFor="let t2 of tablero2">
             <img [src] = "t2.img" class="tabl-min">
             <ion-label>
-              <p class="title-tab"><strong>{{ t2.title }}</strong></p>
-              <p class="pin-number">
+              <ion-text color="dark" class="title-tab"><strong>{{ t2.title }}</strong></ion-text><br>
+              <ion-text color="dark" class="pin-number">
                 <strong>{{ t2.pin }}</strong> 
                 {{ t2.time }} 
-              </p>
+              </ion-text>
             </ion-label>
           </ion-card>
         </ion-list>

@@ -1,17 +1,51 @@
 <ion-header>
   <ion-toolbar>
-    <swiper [slidesPerView]="3" [pagination]="{ clickable: true }" class="mySwiper">
-      <ng-template swiperSlide *ngFor="let item of items">
-        <ion-button color="dark" size="small" shape="round" class="nav-msg">
-          {{ item.name }}
+    <swiper [slidesPerView]="3" [pagination]="{ clickable: true }" #swiper>
+      <ng-template swiperSlide>
+        <ion-button [color]="menuBtn ? 'light' : 'dark'" size="small" shape="round" 
+          class="nav-msg" (click)="onClick()">
+          Todos
+        </ion-button>
+        <ion-button [color]="menuBtn ? 'dark' : 'light'" size="small" shape="round" 
+          class="nav-msg" (click)="onClick()">
+          Siguiendo
         </ion-button>
       </ng-template>
     </swiper>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  
+<ion-content [fullscreen]="true">
+  <!-- ......................................................................... -->
+  <!-- Pines de Inicio -->
+  <ion-grid>
+    <ion-row *ngIf="!menuBtn">
+      <ion-col size="6" *ngFor="let t of todos">
+        <ion-list (click)="pins()">
+          <img [src] = "t.img" class="pin-img">
+          <ion-label>
+            <ion-text color="dark">
+              {{ t.text }}
+            </ion-text>
+          </ion-label>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngIf="menuBtn">
+      <ion-col size="6" *ngFor="let s of siguiendo">
+        <ion-list (click)="pins()">
+          <img [src] = "s.img" class="pin-img">
+          <ion-label>
+            <ion-text color="dark">
+              {{ s.text }}
+            </ion-text>
+          </ion-label>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <!-- ......................................................................... -->
+
   <!-- .....................  Menú de Pinterest  ...................... -->
   <ion-fab vertical="bottom" slot="fixed">
     <ion-chip color="" mode="ios" outline="true">
@@ -32,5 +66,4 @@
     </ion-chip>
   </ion-fab>
   <!-- ................................................................ -->
-
 </ion-content>
