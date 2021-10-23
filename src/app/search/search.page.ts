@@ -36,6 +36,8 @@ export class SearchPage implements OnInit {
   ]
 
   ngOnInit() {
+    // Se define al iniciar, debido a que si no se hace, da problemas con el "toggle".
+    document.body.setAttribute('color-theme','light');
   }
 
 }

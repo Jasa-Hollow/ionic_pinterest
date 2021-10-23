@@ -24,6 +24,17 @@ export class InicioPage implements OnInit {
 
   constructor(private actionSheetController: ActionSheetController) { }
 
+  toggleTheme(event){ 
+    if(event.detail.checked)
+    { 
+      document.body.setAttribute('color-theme','dark'); 
+    }
+    else
+    { 
+      document.body.setAttribute('color-theme','light'); 
+    }
+  }
+
   menuBtn = false;
 
   onClick() {
@@ -129,6 +140,8 @@ export class InicioPage implements OnInit {
   /* .............................................................. */
 
   ngOnInit() {
+    // Se define al iniciar, debido a que si no se hace, da problemas con el "toggle".
+    document.body.setAttribute('color-theme','light');
   }
 
 }

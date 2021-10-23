@@ -48,7 +48,7 @@ export class MensajesPage implements OnInit {
     },
     {
       title: 'Se han guardado 1 Pin de Super Smash Bros',
-      date: '1sem',
+      date: '1 sem',
       img: 'assets/smbB.jpg'
     }
   ]
@@ -111,6 +111,8 @@ export class MensajesPage implements OnInit {
   }
 
   ngOnInit() {
+    // Se define al iniciar, debido a que si no se hace, da problemas con el "toggle".
+    document.body.setAttribute('color-theme','light');
   }
 
 }
