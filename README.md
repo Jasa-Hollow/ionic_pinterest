@@ -18,6 +18,12 @@ Pinterest home's page.
   <img src="https://raw.githubusercontent.com/Jasa-Hollow/ionic_pinterest/master/screenshoots/home.png" alt="Pinterest">
 </p>
 
+Toggle to Light/Dark mode in Home.
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Jasa-Hollow/ionic_pinterest/master/screenshoots/light-dark.png" alt="Pinterest">
+</p>
+
 ## Page - Search
 
 Pinterest search's page, with slides and creators ideas.
